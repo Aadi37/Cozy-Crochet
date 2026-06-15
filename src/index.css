@@ -1,0 +1,442 @@
+@import url("https://use.typekit.net/trk6mhb.css");
+body {
+    /* font-family: "p22-arts-and-crafts", sans-serif; */
+    font-family: "bc-civitas", sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+/* Marquee  */
+
+.topbar {
+    overflow: hidden;
+    background: black;
+    color: white;
+    padding: 10px 0;
+}
+.topbarContainer {
+    overflow: hidden;
+}
+.marquee {
+    display: flex;
+    white-space: nowrap;
+    gap: 50px;
+    animation: scrollText 25s linear infinite;
+}
+
+.marquee span {
+    padding-left: 100%;
+}
+
+/* Animation */
+@keyframes scrollText {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+#topbar {
+    background-color: #fc6b38;
+}
+ul.marquee li h4 {
+    color: #fff;
+    font-weight: 600;
+    position: relative;
+    font-size: 15px;
+}
+
+ul.marquee li h4:before {
+    content:'';
+    position: absolute;
+    color: #fff;
+    height: 10px;
+    width: 10px;
+    background-color:#fff;
+    top: 6px;
+    right: -30px;
+    border-radius: 50px;
+}
+/* Header  */
+li.NavItem a {
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+   font-family: "p22-arts-and-crafts", sans-serif;
+   position: relative; 
+}
+header#mainHeader {
+    border-bottom: 1px solid #ebebeb;
+}
+.FontArt {
+       font-family: "p22-arts-and-crafts", sans-serif; 
+       letter-spacing: 2px;
+}
+.bannerTxt h1 {
+    font-size: 30px;
+    line-height: 45px;
+    font-weight: 600;
+}
+
+.bannerTxt {
+    max-width: 80%;
+}
+
+.BtnDefault {
+    border: 1px solid #000;
+    padding: 9px 35px;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 600;
+    position: relative;
+    cursor: pointer;
+}
+.BtnDefault::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: #fc6b38;
+    transition: width 0.4s ease;
+}
+
+/* Right line */
+.BtnDefault::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 2px;
+    height: 0;
+    background: #fc6b38;
+    transition: height 0.4s ease;
+}
+
+/* Hover effect */
+.BtnDefault::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background: #fc6b38;
+    transition: width 0.3s ease;
+}
+
+/* Right */
+.BtnDefault::after {
+    content: "";
+    position: absolute;
+    right: -5px;
+    bottom: 0;
+    width: 2px;
+    height: 0;
+    background: #fc6b38;
+    transition: height 0.3s ease 0.3s; /* delay */
+}
+
+/* Top */
+.BtnDefault span::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -5px;
+    width: 0;
+    height: 2px;
+    background: #fc6b38;
+    transition: width 0.3s ease 0.6s;
+}
+
+/* Left */
+.BtnDefault span::after {
+    content: "";
+    position: absolute;
+    left: -5px;
+    top: 0;
+    width: 2px;
+    height: 0;
+    background: #fc6b38;
+    transition: height 0.3s ease 0.9s;
+}
+
+/* Hover triggers */
+.BtnDefault:hover::before {
+    width: 100%;
+}
+
+.BtnDefault:hover::after {
+    height: 100%;
+}
+
+.BtnDefault:hover span::before {
+    width: 100%;
+}
+
+.BtnDefault:hover span::after {
+    height: 100%;
+}
+.BtnDefault:hover {
+    background-color:#fff;
+    color:#000;
+    border:1px solid #fff;
+}
+li.NavItem a:before {
+    content:'';
+    position:absolute;
+    bottom: -5px;
+    background-color: #FF5722;
+    height: 2px;
+    width: 0%;
+    left: 0px;
+    transition: 0.5s ease-in;
+}
+li.NavItem a:after {
+    content:'';
+    position:absolute;
+    bottom: -5px;
+    background-color: #FF5722;
+    height: 2px;
+    width: 0%;
+    right: 0px;
+    transition: 0.5s ease-in;
+}
+
+li.NavItem a:hover:after , li.NavItem a:hover:before {
+    width:100%;
+}
+.MobileWidth .MenuWrapper {
+    position: absolute;
+    top:0px;
+    left:-100%;
+    height: 100vh;
+    transition: 0.5s ease-in-out;
+}
+.MobileWidth .MenuWrapper ul {
+   display:block;
+   background-color:#fff;
+   height:100vh;
+   padding:15px;
+}
+.MobileWidth .MenuWrapper ul li {
+   margin-bottom:15px;
+}
+.MobileMenu {
+    position: fixed;
+    bottom: 15px;
+    left: 15px;
+    z-index: 1030;
+}
+.MobileMenu {
+    position: fixed;
+    bottom: 15px;
+    left: 15px;
+    z-index: 1030;
+    background-color: #fff;
+    padding: 14px;
+    border-radius: 60px;
+}
+.MobileWidth .MenuWrapper.showMenu {
+    left: 0px;
+    z-index: 9999;
+}
+.CollectionWrap {
+    display: flex;
+    align-items: center;
+    gap:15px;
+    justify-content: space-between;
+    border: 1px solid #fff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04);
+}
+.CollectionName h4 {
+    font-size: 22px;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+h4.FontArt.text-center.SectionTitle {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.ProductItem {
+border: 1px solid #fff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04);
+    background-color: #fff;
+}
+.ActiveImage img {
+    height: 350px;
+    border-radius: 5px;
+        width: 100%;
+    object-fit: cover;
+}
+h4.ProductTitle {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 30px;
+    text-transform: capitalize;
+}
+
+p.IteamCollection {
+    font-size: 15px;
+    line-height: 30px;
+    font-weight: 600;
+}
+
+p.ItemPrice {
+    font-size: 17px;
+    font-weight: 600;
+}
+.ImagesGrid  img {
+    height: 50px;
+    width: 50px;
+    border-radius:50px;
+    object-fit: cover;
+}
+
+.ImagesGrid ul {
+    display:flex;
+    
+    margin:15px auto;   
+}
+.ShopingBag {
+    position: absolute;
+    right: 0px;
+     bottom: -5px;
+}
+.ShopBtn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: #fff;
+    border: 1px solid #000;
+    padding: 5px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 5px;
+}
+span.BtnTxt {
+    position: absolute;
+    right: -90px;
+    white-space: nowrap;
+    transition:0.5s ease-in;
+}
+
+.ShopBtn:hover span.BtnTxt {
+  position:relative;
+  z-index:1030;
+  right: 0px;
+}
+
+
+.BtnTxt {
+    color:#fff;
+}
+.ShopBtn:hover {
+    background-color: #fc6b38;
+    color: #fff;
+    border: 1px solid #fc6b38;
+}
+
+button.ViewBtn , .closePopup{
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+}
+.testimonailsCards {
+    border: 1px solid #fff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04);
+    background-color: #fff;
+}
+.testimonailsCards {
+    border: 1px solid #fff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04);
+    background-color: #fff;
+    min-height: 200px;
+}
+
+.review p {
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 600;
+}
+
+.ClientName.my-5 h4 {
+    font-size: 20px;
+    font-weight: 600;
+}
+.swiper-pagination-fraction span {
+    color:#fff;
+}
+
+.swiper-pagination-fraction {
+    position:absolute;
+    top:200px !important;
+    z-index: 9999;
+}
+li.FooterNavItem {
+    font-size: 16px;
+    font-weight: 600;
+    color: #000000cf;
+    line-height: 30px;
+}
+.MainLogo img {
+    height:100px;
+    text-align:center;
+    margin:0 auto;
+}
+
+.AnimationEl p {
+ padding:0px 15px;
+ color:#000;
+ font-weight:600;
+ font-size: 20px;
+ 
+}
+.SectionTitle {
+    position:relative;
+   display: inline-block;
+   
+}
+
+.SectionTitle:before {
+   content:'';
+   position:absolute;
+   height:3px;
+   width:50px;
+   background-color:#fc6b38;
+   transform:translate(-50%,-50%);
+   left:50%;
+   bottom:-15px;
+   display:inline;
+   transition:0.5s ease-in;
+}
+.SectionTitle:hover:before {
+   width:100%;
+}
+
+.BgImageSvg {
+    position:relative;
+}
+.BgImageSvg svg {
+        height: 155px;
+    width: 155px;
+    position: absolute;
+    right: -65px;
+    bottom: -65px;
+    overflow: hidden;
+}
