@@ -48,12 +48,12 @@ ul.marquee li h4 {
 }
 
 ul.marquee li h4:before {
-    content:'';
+    content: "";
     position: absolute;
     color: #fff;
     height: 10px;
     width: 10px;
-    background-color:#fff;
+    background-color: #fff;
     top: 6px;
     right: -30px;
     border-radius: 50px;
@@ -64,15 +64,15 @@ li.NavItem a {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
-   font-family: "p22-arts-and-crafts", sans-serif;
-   position: relative; 
+    font-family: "p22-arts-and-crafts", sans-serif;
+    position: relative;
 }
 header#mainHeader {
     border-bottom: 1px solid #ebebeb;
 }
 .FontArt {
-       font-family: "p22-arts-and-crafts", sans-serif; 
-       letter-spacing: 2px;
+    font-family: "p22-arts-and-crafts", sans-serif;
+    letter-spacing: 2px;
 }
 .bannerTxt h1 {
     font-size: 30px;
@@ -181,49 +181,50 @@ header#mainHeader {
     height: 100%;
 }
 .BtnDefault:hover {
-    background-color:#fff;
-    color:#000;
-    border:1px solid #fff;
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #fff;
 }
 li.NavItem a:before {
-    content:'';
-    position:absolute;
+    content: "";
+    position: absolute;
     bottom: -5px;
-    background-color: #FF5722;
+    background-color: #ff5722;
     height: 2px;
     width: 0%;
     left: 0px;
     transition: 0.5s ease-in;
 }
 li.NavItem a:after {
-    content:'';
-    position:absolute;
+    content: "";
+    position: absolute;
     bottom: -5px;
-    background-color: #FF5722;
+    background-color: #ff5722;
     height: 2px;
     width: 0%;
     right: 0px;
     transition: 0.5s ease-in;
 }
 
-li.NavItem a:hover:after , li.NavItem a:hover:before {
-    width:100%;
+li.NavItem a:hover:after,
+li.NavItem a:hover:before {
+    width: 100%;
 }
 .MobileWidth .MenuWrapper {
     position: absolute;
-    top:0px;
-    left:-100%;
+    top: 0px;
+    left: -100%;
     height: 100vh;
     transition: 0.5s ease-in-out;
 }
 .MobileWidth .MenuWrapper ul {
-   display:block;
-   background-color:#fff;
-   height:100vh;
-   padding:15px;
+    display: block;
+    background-color: #fff;
+    height: 100vh;
+    padding: 15px;
 }
 .MobileWidth .MenuWrapper ul li {
-   margin-bottom:15px;
+    margin-bottom: 15px;
 }
 .MobileMenu {
     position: fixed;
@@ -247,12 +248,14 @@ li.NavItem a:hover:after , li.NavItem a:hover:before {
 .CollectionWrap {
     display: flex;
     align-items: center;
-    gap:15px;
+    gap: 15px;
     justify-content: space-between;
     border: 1px solid #fff;
     padding: 15px;
     border-radius: 5px;
-    box-shadow: 0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04);
+    box-shadow:
+        0 2px 15px -3px rgba(0, 0, 0, 0.07),
+        0 10px 20px -2px rgba(0, 0, 0, 0.04);
 }
 .CollectionName h4 {
     font-size: 22px;
@@ -266,16 +269,18 @@ h4.FontArt.text-center.SectionTitle {
 }
 
 .ProductItem {
-border: 1px solid #fff;
+    border: 1px solid #fff;
     padding: 15px;
     border-radius: 5px;
-    box-shadow: 0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04);
+    box-shadow:
+        0 2px 15px -3px rgba(0, 0, 0, 0.07),
+        0 10px 20px -2px rgba(0, 0, 0, 0.04);
     background-color: #fff;
 }
 .ActiveImage img {
     height: 350px;
     border-radius: 5px;
-        width: 100%;
+    width: 100%;
     object-fit: cover;
 }
 h4.ProductTitle {
@@ -295,22 +300,22 @@ p.ItemPrice {
     font-size: 17px;
     font-weight: 600;
 }
-.ImagesGrid  img {
+.ImagesGrid img {
     height: 50px;
     width: 50px;
-    border-radius:50px;
+    border-radius: 50px;
     object-fit: cover;
 }
 
 .ImagesGrid ul {
-    display:flex;
-    
-    margin:15px auto;   
+    display: flex;
+
+    margin: 15px auto;
 }
 .ShopingBag {
     position: absolute;
     right: 0px;
-     bottom: -5px;
+    bottom: -5px;
 }
 .ShopBtn {
     display: flex;
@@ -329,18 +334,17 @@ span.BtnTxt {
     position: absolute;
     right: -90px;
     white-space: nowrap;
-    transition:0.5s ease-in;
+    transition: 0.5s ease-in;
 }
 
 .ShopBtn:hover span.BtnTxt {
-  position:relative;
-  z-index:1030;
-  right: 0px;
+    position: relative;
+    z-index: 1030;
+    right: 0px;
 }
 
-
 .BtnTxt {
-    color:#fff;
+    color: #fff;
 }
 .ShopBtn:hover {
     background-color: #fc6b38;
@@ -348,7 +352,8 @@ span.BtnTxt {
     border: 1px solid #fc6b38;
 }
 
-button.ViewBtn , .closePopup{
+button.ViewBtn,
+.closePopup {
     background-color: #fff;
     padding: 5px;
     border-radius: 5px;
@@ -357,14 +362,18 @@ button.ViewBtn , .closePopup{
     border: 1px solid #fff;
     padding: 15px;
     border-radius: 5px;
-    box-shadow: 0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04);
+    box-shadow:
+        0 2px 15px -3px rgba(0, 0, 0, 0.07),
+        0 10px 20px -2px rgba(0, 0, 0, 0.04);
     background-color: #fff;
 }
 .testimonailsCards {
     border: 1px solid #fff;
     padding: 15px;
     border-radius: 5px;
-    box-shadow: 0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04);
+    box-shadow:
+        0 2px 15px -3px rgba(0, 0, 0, 0.07),
+        0 10px 20px -2px rgba(0, 0, 0, 0.04);
     background-color: #fff;
     min-height: 200px;
 }
@@ -380,12 +389,12 @@ button.ViewBtn , .closePopup{
     font-weight: 600;
 }
 .swiper-pagination-fraction span {
-    color:#fff;
+    color: #fff;
 }
 
 .swiper-pagination-fraction {
-    position:absolute;
-    top:200px !important;
+    position: absolute;
+    top: 200px !important;
     z-index: 9999;
 }
 li.FooterNavItem {
@@ -395,48 +404,154 @@ li.FooterNavItem {
     line-height: 30px;
 }
 .MainLogo img {
-    height:100px;
-    text-align:center;
-    margin:0 auto;
+    height: 100px;
+    text-align: center;
+    margin: 0 auto;
 }
 
 .AnimationEl p {
- padding:0px 15px;
- color:#000;
- font-weight:600;
- font-size: 20px;
- 
+    padding: 0px 15px;
+    color: #000;
+    font-weight: 600;
+    font-size: 20px;
 }
 .SectionTitle {
-    position:relative;
-   display: inline-block;
-   
+    position: relative;
+    display: inline-block;
 }
 
 .SectionTitle:before {
-   content:'';
-   position:absolute;
-   height:3px;
-   width:50px;
-   background-color:#fc6b38;
-   transform:translate(-50%,-50%);
-   left:50%;
-   bottom:-15px;
-   display:inline;
-   transition:0.5s ease-in;
+    content: "";
+    position: absolute;
+    height: 3px;
+    width: 50px;
+    background-color: #fc6b38;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    bottom: -15px;
+    display: inline;
+    transition: 0.5s ease-in;
 }
 .SectionTitle:hover:before {
-   width:100%;
+    width: 100%;
 }
 
 .BgImageSvg {
-    position:relative;
+    position: relative;
 }
 .BgImageSvg svg {
-        height: 155px;
+    height: 155px;
     width: 155px;
     position: absolute;
     right: -65px;
     bottom: -65px;
     overflow: hidden;
+}
+button.absolute.top-2.right-2.text-xl.CloseIcon {
+    background-color: #fff;
+    right: 15px;
+    top: 15px;
+    padding: 5px;
+    border-radius: 5px;
+}
+.FooterCol h4 {
+    position: relative;
+    display: inline-block;
+}
+
+.FooterCol h4:before {
+    content: "";
+    position: absolute;
+    height: 3px;
+    width: 50px;
+    background-color: #fc6b38;
+    left: 0%;
+    bottom: -10px;
+    display: inline;
+    transition: 0.5s ease-in;
+}
+.FooterCol h4:hover:before {
+    width: 100%;
+}
+.small-device .FooterCol h4 {
+    background-color: #fff;
+    display: block;
+    padding: 10px 5px;
+    border-radius: 5px;
+}
+.small-device .FooterCol h4:before {
+    display: none;
+}
+.dropdownMenu {
+    position: relative;
+}
+
+/* hidden state */
+.dropdownItem {
+    position: absolute;
+    top: 120%;
+    left: 0;
+    background: white;
+    min-width: 200px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+/* show on hover */
+.dropdownMenu:hover .dropdownItem {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* list styling */
+.dropdownItem ul {
+    padding: 10px 0;
+}
+
+.dropdownItem li {
+    padding: 10px 15px;
+    transition: all 0.2s ease;
+}
+
+/* hover effect */
+.dropdownItem li:hover {
+    background: #f5f5f5;
+    padding-left: 20px;
+}
+
+/* link */
+.dropdownItem a {
+    display: block;
+    font-size: 14px;
+    color: #333;
+}
+.captalize {
+    text-transform: capitalize;
+}
+button.absolute.top-2.right-3.text-xl.closeBtn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+}
+/* Media query  */
+@media (min-width: 320px) and (max-width: 768px) {
+    .dropdownItem {
+        opacity: 1;
+        visibility: visible;
+        position: relative;
+        box-shadow: unset;
+    }
+    .MobileWidth .dropdownMenu ul {
+        height: auto;
+    }
 }

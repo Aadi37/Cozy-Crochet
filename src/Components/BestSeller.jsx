@@ -3,6 +3,8 @@ import products from "../data/Product.js";
 import { AiOutlineShopping } from "react-icons/ai";
 import { AiOutlineEye } from "react-icons/ai";
 import { Swiper, SwiperSlide } from 'swiper/react'
+import { Link } from "react-router-dom";
+
 import 'swiper/css'
 const BestSeller = () => {
     const [isModalOpen, setIsModalOpen] = useState(false)
@@ -19,6 +21,25 @@ const BestSeller = () => {
         setSelectedProduct(product)
         setIsModalOpen(true)
     }
+
+const handleWhatsAppOrder = (product) => {
+    const phoneNumber = "917999589547"; // without +, without dash
+
+    const message = `
+Hello 👋
+I want to order this product:
+
+🛍️ Product: ${product.name}
+📂 Category: ${product.category}
+💰 Price: ₹${product.price}
+
+Please confirm availability.
+`;
+
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+    window.open(url, "_blank");
+};
     return (
         <>
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -33,12 +54,15 @@ const BestSeller = () => {
                                 <div key={item.id} className="ProductItem">
                                     <div className="ProductImage">
                                         <div className="ActiveImage relative">
+                                            <Link to={`/product/${item.slug}`}>
                                             <img src={item.images[getActiveIndex(item.id)]} alt={item.name} loading="lazy" />
                                             <div className="absolute top-2 right-2 bg-white p-2 rounded-full shadow hover:scale-110 transition">
                                                 <button onClick={() => handleQuickView(item)} className="ViewBtn">
                                                     <AiOutlineEye size={22} />
                                                 </button>
                                             </div>
+                                            </Link>
+                                            
                                         </div>
                                         <div className="ImagesGrid">
                                             <ul className="flex gap-2 flex-wrap">
@@ -60,7 +84,7 @@ const BestSeller = () => {
                                         <p className="IteamCollection text-gray-500">Collection - {item.category}</p>
                                         <p className="ItemPrice">Price - {item.price} &#8377;</p>
                                         <div className="ShopingBag">
-                                            <button className="ShopBtn" id={item.id}><span className="BtnTxt">Shop Now</span>
+                                            <button className="ShopBtn" id={item.id}  onClick={() => handleWhatsAppOrder(item)}><span className="BtnTxt">Shop Now</span>
                                                 <span className="BtnIcon"><AiOutlineShopping size={25} />
                                                 </span></button>
                                         </div>
@@ -79,7 +103,10 @@ const BestSeller = () => {
                                             {/* SAME CARD CODE */}
                                             <div className="ProductImage">
                                                 <div className="ActiveImage relative">
-                                                    <img src={item.images[getActiveIndex(item.id)]} alt={item.name} />
+                                                     <Link to={`/product/${item.slug}`}>
+                                                     <img src={item.images[getActiveIndex(item.id)]} alt={item.name} />
+                                                     </Link>
+                                                    
                                                 </div>
                                             </div>
                                             <div className="ProductInformation my-4 relative">
@@ -87,7 +114,7 @@ const BestSeller = () => {
                                                 <p className="IteamCollection text-gray-500">Collection - {item.category}</p>
                                                 <p className="ItemPrice">Price - {item.price} &#8377;</p>
                                                 <div className="ShopingBag">
-                                                    <button className="ShopBtn" id={item.id}><span className="BtnTxt">Shop Now</span>
+                                                    <button className="ShopBtn" id={item.id}  onClick={() => handleWhatsAppOrder(item)}><span className="BtnTxt">Shop Now</span>
                                                         <span className="BtnIcon"><AiOutlineShopping size={25} />
                                                         </span></button>
                                                 </div>

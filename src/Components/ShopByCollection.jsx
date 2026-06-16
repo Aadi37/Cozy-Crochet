@@ -1,7 +1,8 @@
 import { useState } from "react"
 import products from "../data/Product.js"
 import { AiOutlineEye } from "react-icons/ai";
-
+import { AiOutlineShopping } from "react-icons/ai";
+import {Link} from "react-router-dom"
 const ShopByCollection = () => {
 
     // ✅ Category Tabs
@@ -19,7 +20,24 @@ const ShopByCollection = () => {
         activeTab === "All"
             ? products
             : products.filter(item => item.category === activeTab)
+    const handleWhatsAppOrder = (product) => {
+        const phoneNumber = "917999589547"; // without +, without dash
 
+        const message = `
+Hello 👋
+I want to order this product:
+
+🛍️ Product: ${product.name}
+📂 Category: ${product.category}
+💰 Price: ₹${product.price}
+
+Please confirm availability.
+`;
+
+        const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+        window.open(url, "_blank");
+    };
     return (
         <>
             <div className="ShopByCollection py-10">
@@ -27,8 +45,8 @@ const ShopByCollection = () => {
 
                     {/* 🔥 TITLE */}
                     <div className="text-center">
-<div className="text-center">
-                        <h4 className="FontArt text-center SectionTitle">Shop By Collection</h4>
+                        <div className="text-center">
+                            <h4 className="FontArt text-center SectionTitle">Shop By Collection</h4>
                         </div>
                     </div>
 
@@ -38,14 +56,13 @@ const ShopByCollection = () => {
                             <button
                                 key={index}
                                 onClick={() => setActiveTab(cat)}
-                                className={`px-4 py-2 border rounded BtnDefault ${
-                                    activeTab === cat
+                                className={`px-4 py-2 border rounded BtnDefault ${activeTab === cat
                                         ? "bg-orange-500 text-white"
                                         : "bg-white"
-                                }`}
+                                    }`}
                             >
-                               <span
-                               >{cat}</span> 
+                                <span
+                                >{cat}</span>
                             </button>
                         ))}
                     </div>
@@ -61,24 +78,28 @@ const ShopByCollection = () => {
 
                                     {/* 🔥 IMAGE SECTION */}
                                     <div className="relative">
-
-                                        <img
+                                      <Link to={`/product/${prod.slug}`}> <img
                                             src={prod.images[currentIndex]}
                                             alt={prod.name}
                                             className="w-full h-[300px] object-cover rounded transition duration-300"
                                         />
+                                        </Link>
+                                       
 
                                         {/* 👁️ VIEW BUTTON */}
                                         <button
-                                            onClick={() => setModalProduct(prod)}
+                                            onClick={() => setModalProduct({
+    ...prod,
+    activeIndex: currentIndex
+})}
                                             className="absolute top-2 right-2 bg-white p-2 rounded-full shadow hover:scale-110 transition"
                                         >
-                                              <AiOutlineEye size={22} />
+                                            <AiOutlineEye size={22} />
                                         </button>
                                     </div>
 
                                     {/* 🔥 THUMBNAILS */}
-                                    
+
                                     <div className="flex gap-2 mt-2 ImagesGrid flex-wrap">
                                         {prod.images.map((img, i) => (
                                             <img
@@ -91,20 +112,24 @@ const ShopByCollection = () => {
                                                         [prod.id]: i
                                                     }))
                                                 }
-                                                className={`w-12 h-12 object-cover rounded cursor-pointer border ${
-                                                    currentIndex === i
+                                                className={`w-12 h-12 object-cover rounded cursor-pointer border ${currentIndex === i
                                                         ? "border-orange-500"
                                                         : ""
-                                                }`}
+                                                    }`}
                                             />
                                         ))}
                                     </div>
 
                                     {/* 🔥 INFO */}
-                                    <div className="my-4">
+                                    <div className="ProductInformation my-4 relative">
                                         <h4 className="ProductTitle">{prod.name}</h4>
-                                        <p className="IteamCollection text-gray-500">{prod.category}</p>
-                                        <p className="ItemPrice mt-1">₹{prod.price}</p>
+                                        <p className="IteamCollection text-gray-500">Collection - {prod.category}</p>
+                                        <p className="ItemPrice">Price - {prod.price} &#8377;</p>
+                                        <div className="ShopingBag">
+                                            <button className="ShopBtn" id={prod.id} onClick={() => handleWhatsAppOrder(prod)}><span className="BtnTxt">Shop Now</span>
+                                                <span className="BtnIcon"><AiOutlineShopping size={25} />
+                                                </span></button>
+                                        </div>
                                     </div>
                                 </div>
                             )
@@ -122,14 +147,14 @@ const ShopByCollection = () => {
                         {/* ❌ CLOSE BUTTON */}
                         <button
                             onClick={() => setModalProduct(null)}
-                            className="absolute top-2 right-2 text-xl"
+                            className="absolute top-2 right-2 text-xl CloseIcon"
                         >
                             ✖
                         </button>
 
                         {/* IMAGE */}
                         <img
-                            src={modalProduct.images[0]}
+                            src={modalProduct.images[modalProduct.activeIndex || 0]}
                             alt={modalProduct.name}
                             className="w-full h-[250px] object-cover rounded"
                         />

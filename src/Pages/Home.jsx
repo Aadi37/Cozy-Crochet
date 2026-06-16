@@ -41,7 +41,7 @@ const Home = () => {
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                     backgroundRepeat: "no-repeat",
-                    padding: "65px 0px",
+                    padding: "120px 0px",
                     display: "flex",
                     alignItems: "center",
                 }}

@@ -8,6 +8,8 @@ import MainFooter from "./Footers/MainFooter";
 import ShopAll from "./Pages/ShopAll"
 import FooterTwo from "./Footers/FooterTwo"
 import Contact from "./Pages/Contact"
+import Collection from "./Pages/Collection"
+import ProductDetailPage from "./Pages/ProductDetailPage"
 function App() {
   return (
     <>
@@ -23,6 +25,8 @@ function App() {
         <Route path="/about" element={<About />} />
          <Route path="/shop" element={<ShopAll />} />
          <Route path="/contact" element={<Contact />} />
+        <Route path="/:category" element={<Collection />} />
+        <Route path="/product/:slug" element={<ProductDetailPage />} />
       </Routes>
       <footer className="mt-10" style={{ backgroundColor: '#eeeeeebf', }}>
         <FooterTwo />
